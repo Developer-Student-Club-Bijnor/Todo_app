@@ -3,7 +3,8 @@
 
 Simple ToDo web app in Django
 
-![img]("/static/Screenshot.png")
+
+![img](https://raw.githubusercontent.com/Developer-Student-Club-Bijnor/Todo_app/main/static/Screenshot.png)
 
 ## Details
 
@@ -16,4 +17,4 @@ Update and Delete tasks easily.
 
 ## Author
 
-[Kumar Shanu]('https://its-Kumar.github.io/')
+[Kumar Shanu](https://its-Kumar.github.io/)
