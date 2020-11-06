@@ -1,0 +1,23 @@
+{%load static%}
+
+<head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{%static 'style.css' %}">
+</head>
+
+<body>
+
+    <div class="center-column">
+
+        <h3 style="text-align: center; font-weight:bolder">Update Task <i>"{{task}}"</i></h3>
+        <div class="item-row">
+            <form method="POST">
+                {%csrf_token%}
+                {{form}}
+                <input class="btn btn-info" type="submit" value="Update Task">
+            </form>
+        </div>
+    </div>
+</body>

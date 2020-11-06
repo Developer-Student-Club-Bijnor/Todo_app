@@ -1,0 +1,44 @@
+{%load static%}
+<html>
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>ToDo App by Kumar Shanu</title>
+        <link rel="stylesheet" type="text/css" href="{%static 'style.css' %}">
+    </head>
+
+    <body>
+        {%block content%}
+        {%endblock%}
+
+        <div class="center-column">
+
+            <h1 style="text-align:center; font-weight:bolder">ToDo App</h1>
+            <form method="POST" action="">
+                {%csrf_token%}
+                {{ form.title }}
+                <input class="btn btn-info" type="submit" value="Create Task">
+            </form>
+            <div class="todo-list">
+
+                {%for task in tasks%}
+                <div class="item-row">
+
+                    <a class="btn btn-sm btn-info" href={%url 'update' task.id %}>Update</a>
+                    <a class="btn btn-sm btn-danger" href={%url 'delete' task.id %}>Delete</a>
+                    {%if task.complete == True%}
+                    <strike>{{task}}</strike>
+                    {%else%}
+                    <span>{{task}}</span>
+                    {%endif%}
+                </div>
+                {%endfor%}
+            </div>
+        </div>
+    </body>
+
+</html>
